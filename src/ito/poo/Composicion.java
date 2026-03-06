@@ -24,12 +24,12 @@ public class Composicion {
         this.interpretes = new ArrayList<>();
         this.solicitudes = new ArrayList<Solicitud>();
     }
+    public void  agregaInterprete(String nombreInterprete) {
+        this.interpretes.add(nombreInterprete);
+    }
     public void agregarSolicitud(Solicitud solicitud){
         this.solicitudes.add(solicitud);
         agregaInterprete(solicitud.getNombreInterprete());
-    }
-    public void  agregaInterprete(String nombreInterprete) {
-        this.interpretes.add(nombreInterprete);
     }
     public void setTitulo(String titulo) {
         this.titulo = titulo;
