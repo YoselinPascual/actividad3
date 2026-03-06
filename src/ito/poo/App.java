@@ -1,6 +1,4 @@
 package ito.poo;
-
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 public class App {
@@ -25,8 +23,8 @@ public class App {
                 LocalDate.of(2026,4,20),
                 "Warner Music Group"
         );
-        cancion.agregarSolicitud(sol1);
-        cancion.agregarSolicitud(sol2);
+        cancion.agregaSolicitud(sol1);
+        cancion.agregaSolicitud(sol2);
 
         System.out.println(cancion.toString());
         System.out.println();
