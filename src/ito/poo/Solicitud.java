@@ -26,19 +26,15 @@ public class Solicitud {
     public String getNombreInterprete(){
         return nombreInterprete;
     }
-
     public LocalDate getFechaAutorizacion() {
         return fechaAutorizacion;
     }
-
     public LocalDate getFechaSolicitud() {
         return fechaSolicitud;
     }
-
     public String getCompania() {
         return compania;
     }
-
     @Override
     public String toString() {
         return "Solicitud{" +

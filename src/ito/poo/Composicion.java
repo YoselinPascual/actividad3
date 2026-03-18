@@ -24,47 +24,36 @@ public class Composicion {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
     public void setDuracionMinuto(int duracionMinuto) {
         this.duracionMinuto = duracionMinuto;
     }
-
     public void setDuracionSegundo(int duracionSegundo) {
         this.duracionSegundo = duracionSegundo;
     }
-
     public void setGenero(String genero) {
         this.genero = genero;
     }
-
     public void setFechaEstreno(LocalDate fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
     }
-
     public String getTitulo() {
         return titulo;
     }
-
     public int getDuracionMinuto() {
         return duracionMinuto;
     }
-
     public int getDuracionSegundo() {
         return duracionSegundo;
     }
-
     public String getGenero() {
         return genero;
     }
-
     public LocalDate getFechaRegistro() {
         return fechaRegistro;
     }
-
     public LocalDate getFechaEstreno() {
         return fechaEstreno;
     }
-
     public ArrayList<Solicitud> getSolicitudes() {
         return solicitudes;
     }
