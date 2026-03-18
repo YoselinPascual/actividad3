@@ -9,7 +9,6 @@ public class Composicion {
     private String genero;
     private LocalDate fechaRegistro;
     private LocalDate fechaEstreno;
-    private ArrayList<String> interpretes;
     private ArrayList<Solicitud> solicitudes;
 
     public Composicion(String titulo, int duracionMinuto, int duracionSegundo,
@@ -20,28 +19,58 @@ public class Composicion {
         this.genero = genero;
         this.fechaRegistro = fechaRegistro;
         this.fechaEstreno = null;
-        this.interpretes = new ArrayList<>();
         this.solicitudes = new ArrayList<>();
     }
-
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-    public void setDuracionMinuto(int duracionMinuto) { this.duracionMinuto = duracionMinuto; }
-    public void setDuracionSegundo(int duracionSegundo) { this.duracionSegundo = duracionSegundo; }
-    public void setGenero(String genero) { this.genero = genero; }
-    public void setFechaEstreno(LocalDate fechaEstreno) { this.fechaEstreno = fechaEstreno; }
-    public LocalDate getFechaEstreno() { return fechaEstreno; }
-    public ArrayList<String> getInterpretes() { return interpretes; }
-    public ArrayList<Solicitud> getSolicitudes() { return solicitudes; }
-
-    public void agregaInterprete(String nombreInterprete) {
-        interpretes.add(nombreInterprete);
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
+    public void setDuracionMinuto(int duracionMinuto) {
+        this.duracionMinuto = duracionMinuto;
+    }
+
+    public void setDuracionSegundo(int duracionSegundo) {
+        this.duracionSegundo = duracionSegundo;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setFechaEstreno(LocalDate fechaEstreno) {
+        this.fechaEstreno = fechaEstreno;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getDuracionMinuto() {
+        return duracionMinuto;
+    }
+
+    public int getDuracionSegundo() {
+        return duracionSegundo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public LocalDate getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public LocalDate getFechaEstreno() {
+        return fechaEstreno;
+    }
+
+    public ArrayList<Solicitud> getSolicitudes() {
+        return solicitudes;
+    }
     public void agregaSolicitud(Solicitud solicitud) {
         solicitudes.add(solicitud);
-        agregaInterprete(solicitud.getNombreInterprete());
     }
-
     @Override
     public String toString() {
         String result = "Composicion{" +
@@ -50,12 +79,13 @@ public class Composicion {
                 String.format("%02d", duracionSegundo) +
                 "\nGenero: " + genero +
                 "\nFechaRegistro: " + fechaRegistro +
-                "\nFechaEstreno: " + (fechaEstreno != null ? fechaEstreno : "Sin estreno") +
-                "\nInterpretes: ";
-        for (String interprete : interpretes) {
-            result += "\n  - " + interprete;
+                "\nFechaEstreno: " + (fechaEstreno != null ? fechaEstreno : "No hay fecha de  estreno") +
+                "\nInterpretes:";
+        for (Solicitud s : solicitudes) {
+            result += "\n  - " + s.getNombreInterprete();
         }
-        result += "\nSolicitudes registradas: " + solicitudes.size();
+        result += "\nSolicitudes registradas: " + solicitudes.size() +
+                "\n}";
         return result;
     }
 }

@@ -1,59 +1,52 @@
 package ito.poo3;
 import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private float cargaMaxima;
-    private LocalDate fechaAdquirida;
-
-    // inicializador de atributo
-    private ArrayList<Viaje> viajesRealizados = new ArrayList<>();
-
-    public Vehiculo(String marca, String modelo, float cargaMaxima, LocalDate fechaAdquirida){
+    private double cargaMaxima;
+    private LocalDate fechaAdquisicion;
+    private List<Viaje> viajes;
+    public Vehiculo(String marca, String modelo, double cargaMaxima, LocalDate fechaAdquisicion) {
         this.marca = marca;
         this.modelo = modelo;
         this.cargaMaxima = cargaMaxima;
-        this.fechaAdquirida = fechaAdquirida;
+        this.fechaAdquisicion = fechaAdquisicion;
+        this.viajes = new ArrayList<>();
     }
-
     public String getMarca() {
         return marca;
     }
-
     public String getModelo() {
         return modelo;
     }
-
-    public float getCargaMaxima(){
+    public double getCargaMaxima() {
         return cargaMaxima;
     }
-
-    public LocalDate getFechaAdquirida(){
-        return fechaAdquirida;
+    public void setCargaMaxima(double cargaMaxima) {
+        this.cargaMaxima = cargaMaxima;
     }
-
-    public ArrayList<Viaje> getViajesRealizados(){
-        return viajesRealizados;
+    public LocalDate getFechaAdquisicion() {
+        return fechaAdquisicion;
     }
-
-    public void asignarViaje(Viaje viaje){
-        viajesRealizados.add(viaje);
+    public List<Viaje> getViajes() {
+        return viajes;
     }
-
-    public void darBajaViaje(Viaje viaje){
-        viajesRealizados.remove(viaje);
+    public void agregarViaje(Viaje v) {
+        viajes.add(v);
     }
-
+    public void eliminarViaje(Viaje v) {
+        viajes.remove(v);
+    }
     @Override
     public String toString() {
         return "Vehiculo{" +
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", cargaMaxima=" + cargaMaxima +
-                ", fechaAdquirida=" + fechaAdquirida +
-                ", viajesRealizados=" + viajesRealizados +
+                ", fechaAdquisicion=" + fechaAdquisicion +
                 '}';
     }
 }

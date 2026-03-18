@@ -31,6 +31,14 @@ public class Solicitud {
         return fechaAutorizacion;
     }
 
+    public LocalDate getFechaSolicitud() {
+        return fechaSolicitud;
+    }
+
+    public String getCompania() {
+        return compania;
+    }
+
     @Override
     public String toString() {
         return "Solicitud{" +

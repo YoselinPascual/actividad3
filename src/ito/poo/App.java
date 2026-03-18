@@ -33,7 +33,5 @@ public class App {
         System.out.println(sol2.toString());
 
         System.out.println("\nTotal de solicitudes: "+cancion.getSolicitudes().size());
-        System.out.println("Total de interpretes: "+cancion.getInterpretes().size());
-
     }
 }
